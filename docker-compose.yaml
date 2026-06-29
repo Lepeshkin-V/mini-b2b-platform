@@ -8,3 +8,13 @@ services:
     environment:
       PORT: 3000
       NODE_ENV: production
+  postgres:
+    image: postgres:16-alpine3.23
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: b2b
