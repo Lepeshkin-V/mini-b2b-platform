@@ -1,0 +1,10 @@
+name: mini-b2b-platform
+
+services:
+  api:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: production
