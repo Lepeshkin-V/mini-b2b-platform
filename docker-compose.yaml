@@ -5,6 +5,11 @@ services:
     build: .
     ports:
       - "${PORT}:3000"
+    depends_on:
+      - redis
+      - postgres
+    env_file: 
+      - .env
   postgres:
     image: postgres:16-alpine3.23
     ports:
