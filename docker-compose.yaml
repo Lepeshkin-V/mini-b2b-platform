@@ -4,7 +4,7 @@ services:
   api:
     build: .
     ports:
-      - "${PORT}:3000"
+      - "${PORT}:${PORT}"
     depends_on:
       - redis
       - postgres
@@ -13,7 +13,7 @@ services:
   postgres:
     image: postgres:16-alpine3.23
     ports:
-      - "${POSTGRES_PORT}:5432"
+      - "${POSTGRES_PORT_OUTSIDE}:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
     environment:
